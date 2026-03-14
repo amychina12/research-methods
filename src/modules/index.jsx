@@ -19,66 +19,66 @@ const CATEGORIES = [
     name: "Statistical Reasoning", color: C.smp, bg: C.smpBg, tag: "STAT",
     desc: "Build intuition for randomness, inference, and uncertainty",
     modules: [
-      { num: 1, title: "Sampling Distributions", file: "sampling-distributions" },
-      { num: 2, title: "Hypothesis Testing", file: "hypothesis-testing" },
-      { num: 3, title: "Confidence Intervals", file: "confidence-intervals" },
-      { num: 4, title: "Bayesian Thinking", file: "bayesian-thinking" },
+      { num: 1, title: "Sampling Distributions", file: "sampling-distributions", hint: "CLT, law of large numbers" },
+      { num: 2, title: "Hypothesis Testing", file: "hypothesis-testing", hint: "p-values, Type I & II errors" },
+      { num: 3, title: "Confidence Intervals", file: "confidence-intervals", hint: "Interval estimation, coverage" },
+      { num: 4, title: "Bayesian Thinking", file: "bayesian-thinking", hint: "Priors, posteriors, updating" },
     ],
   },
   {
     name: "Foundations", color: C.sam, bg: C.samBg, tag: "FOUND",
     desc: "The core regression toolkit for empirical research",
     modules: [
-      { num: 5, title: "OLS Regression", file: "ols-regression" },
-      { num: 6, title: "Logit & Probit", file: "logit-probit" },
-      { num: 7, title: "Count Models", file: "count-models" },
+      { num: 5, title: "OLS Regression", file: "ols-regression", hint: "Coefficients, R-squared, residuals" },
+      { num: 6, title: "Logit & Probit", file: "logit-probit", hint: "Binary outcomes, odds ratios" },
+      { num: 7, title: "Count Models", file: "count-models", hint: "Poisson, negative binomial" },
     ],
   },
   {
     name: "Mechanisms", color: C.grn, bg: C.grnBg, tag: "MECH",
     desc: "How and when effects operate",
     modules: [
-      { num: 8, title: "Moderation", file: "moderation" },
-      { num: 9, title: "Mediation", file: "mediation" },
+      { num: 8, title: "Moderation", file: "moderation", hint: "Interaction effects, simple slopes" },
+      { num: 9, title: "Mediation", file: "mediation", hint: "Indirect effects, bootstrapping" },
     ],
   },
   {
     name: "Panel & Multilevel", color: C.smp, bg: C.smpBg, tag: "PANEL",
     desc: "Exploiting the structure of repeated and nested observations",
     modules: [
-      { num: 10, title: "Panel Data", file: "panel-data" },
-      { num: 11, title: "Multilevel / HLM", file: "multilevel-hlm" },
+      { num: 10, title: "Panel Data", file: "panel-data", hint: "Fixed & random effects, Hausman" },
+      { num: 11, title: "Multilevel / HLM", file: "multilevel-hlm", hint: "Random intercepts, ICC, nesting" },
     ],
   },
   {
     name: "Causal Inference", color: C.rose, bg: C.roseBg, tag: "CAUSAL",
     desc: "The credibility revolution: designs for identifying causal effects",
     modules: [
-      { num: 12, title: "Endogeneity", file: "endogeneity" },
-      { num: 13, title: "Difference-in-Differences", file: "did" },
-      { num: 14, title: "Instrumental Variables", file: "instrumental-variables" },
-      { num: 15, title: "Regression Discontinuity", file: "rdd" },
-      { num: 16, title: "Matching", file: "matching" },
-      { num: 17, title: "Heckman Selection", file: "heckman" },
-      { num: 18, title: "Experiments & Quasi-Experiments", file: "experiments-quasi" },
+      { num: 12, title: "Endogeneity", file: "endogeneity", hint: "OVB, reverse causality, solutions" },
+      { num: 13, title: "Difference-in-Differences", file: "did", hint: "Parallel trends, event studies" },
+      { num: 14, title: "Instrumental Variables", file: "instrumental-variables", hint: "2SLS, relevance, exclusion" },
+      { num: 15, title: "Regression Discontinuity", file: "rdd", hint: "Sharp/fuzzy, bandwidth choice" },
+      { num: 16, title: "Matching", file: "matching", hint: "PSM, CEM, entropy balancing" },
+      { num: 17, title: "Heckman Selection", file: "heckman", hint: "Sample selection, inverse Mills" },
+      { num: 18, title: "Experiments & Quasi-Experiments", file: "experiments-quasi", hint: "RCTs, natural experiments" },
     ],
   },
   {
     name: "Advanced", color: C.smp, bg: C.smpBg, tag: "ADV",
     desc: "Specialized methods for complex research questions",
     modules: [
-      { num: 19, title: "Synthetic Control", file: "synthetic-control" },
-      { num: 20, title: "Survival Analysis", file: "survival-analysis" },
-      { num: 21, title: "QCA", file: "qca" },
-      { num: 22, title: "AI & ML Methods", file: "ai-ml-methods" },
+      { num: 19, title: "Synthetic Control", file: "synthetic-control", hint: "Donor pools, placebo tests" },
+      { num: 20, title: "Survival Analysis", file: "survival-analysis", hint: "Hazard functions, Cox PH" },
+      { num: 21, title: "QCA", file: "qca", hint: "Set theory, truth tables" },
+      { num: 22, title: "AI & ML Methods", file: "ai-ml-methods", hint: "LASSO, causal forests, NLP" },
     ],
   },
   {
     name: "Epilogue & Tools", color: C.pop, bg: C.popBg, tag: "META",
     desc: "The big picture and your method selection toolkit",
     modules: [
-      { num: 23, title: "The Grand Principles", file: "grand-principles" },
-      { num: 24, title: "Method Chooser", file: "method-chooser" },
+      { num: 23, title: "The Grand Principles", file: "grand-principles", hint: "Signal vs noise, counterfactuals" },
+      { num: 24, title: "Method Chooser", file: "method-chooser", hint: "Interactive decision tree" },
     ],
   },
 ];
@@ -147,7 +147,7 @@ export default function LandingPage() {
                     }}>{mod.num}</div>
                     <div>
                       <div style={{ fontSize: "13px", fontWeight: 600, color: C.tx, lineHeight: 1.3 }}>{mod.title}</div>
-                      <div style={{ fontSize: "10px", color: C.txM, fontFamily: mono }}>{mod.file}.jsx</div>
+                      <div style={{ fontSize: "11px", color: C.txM, lineHeight: 1.4 }}>{mod.hint}</div>
                     </div>
                   </div>
                 );
@@ -183,7 +183,7 @@ export default function LandingPage() {
       {/* Footer */}
       <div style={{ textAlign: "center", marginTop: "48px", fontSize: "13px", color: C.txM, lineHeight: 1.7 }}>
         <div style={{ fontFamily: serif, fontSize: "15px", color: C.txD, marginBottom: "6px" }}>
-          Built by <strong style={{ color: C.tx }}>Wei Shi</strong>
+          Built by <strong style={{ color: C.tx }}>Wei Yu</strong>
         </div>
         <div>Department of Industrial Systems Engineering and Management</div>
         <div>National University of Singapore</div>
